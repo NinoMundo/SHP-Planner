@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHP Planner — Paraguay Residency Roadmap</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&family=Space+Grotesk:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero">
+        <div class="brand">
+          <span class="brand-mark">SHP</span>
+          <div class="brand-text">
+            <p class="brand-kicker">Sweet Home Paraguay</p>
+            <h1>Residency planning for modern movers.</h1>
+          </div>
+        </div>
+        <p class="hero-subtitle">
+          Tell us where you are now and when you plan to arrive. We’ll build a
+          tailored Paraguay residency roadmap using our in-house references.
+        </p>
+        <div class="hero-meta">
+          <div>
+            <span class="meta-label">For</span>
+            <span class="meta-value">Digital nomads & expats</span>
+          </div>
+          <div>
+            <span class="meta-label">Focus</span>
+            <span class="meta-value">Tax residency + relocation</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <form class="planner" id="plannerForm">
+          <div class="field">
+            <label for="citizenship">Citizenship country</label>
+            <input
+              id="citizenship"
+              name="citizenship"
+              type="text"
+              placeholder="e.g., Canada"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="currentResidency">Current residency country</label>
+            <input
+              id="currentResidency"
+              name="currentResidency"
+              type="text"
+              placeholder="e.g., Germany"
+              required
+            />
+          </div>
+          <div class="field">
+            <label for="purpose">Purpose</label>
+            <select id="purpose" name="purpose" required>
+              <option value="" disabled selected>Choose a purpose</option>
+              <option value="tax">Establish tax residency</option>
+              <option value="move">Move to Paraguay</option>
+              <option value="both">Both tax residency and relocation</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="arrival">Planned arrival date</label>
+            <input id="arrival" name="arrival" type="date" required />
+          </div>
+          <div class="field">
+            <label for="departure">Planned departure date</label>
+            <input id="departure" name="departure" type="date" />
+          </div>
+
+          <button class="submit" type="submit">Build my plan</button>
+        </form>
+
+        <aside class="preview" id="preview">
+          <div class="preview-header">
+            <h2>Your planning snapshot</h2>
+            <span class="preview-pill">Live preview</span>
+          </div>
+          <div class="preview-body">
+            <div>
+              <span class="preview-label">Citizenship</span>
+              <span class="preview-value" data-preview="citizenship">
+                Not set
+              </span>
+            </div>
+            <div>
+              <span class="preview-label">Current residency</span>
+              <span class="preview-value" data-preview="currentResidency">
+                Not set
+              </span>
+            </div>
+            <div>
+              <span class="preview-label">Purpose</span>
+              <span class="preview-value" data-preview="purpose">Not set</span>
+            </div>
+            <div>
+              <span class="preview-label">Arrival</span>
+              <span class="preview-value" data-preview="arrival">Not set</span>
+            </div>
+            <div>
+              <span class="preview-label">Departure</span>
+              <span class="preview-value" data-preview="departure">Not set</span>
+            </div>
+          </div>
+          <div class="preview-footer">
+            <p>
+              Once you submit, we’ll map these details to Paraguay residency
+              milestones and Sweet Home Paraguay guidance.
+            </p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="roadmap" id="roadmap" aria-live="polite">
+        <div class="roadmap-header">
+          <h2>Residency roadmap</h2>
+          <p>Submit the form to generate your Sweet Home Paraguay plan.</p>
+        </div>
+        <div class="roadmap-body">
+          <div class="roadmap-column">
+            <h3>Timeline</h3>
+            <ol class="roadmap-list" id="timelineList">
+              <li>Waiting for your details.</li>
+            </ol>
+          </div>
+          <div class="roadmap-column">
+            <h3>Checklist</h3>
+            <ul class="roadmap-list" id="checklistList">
+              <li>We will populate this after submission.</li>
+            </ul>
+          </div>
+          <div class="roadmap-column">
+            <h3>Documents</h3>
+            <ul class="roadmap-list" id="documentsList">
+              <li>We will populate this after submission.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>

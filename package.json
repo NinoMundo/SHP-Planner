@@ -1,0 +1,14 @@
+{
+  "name": "shp-planner",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "SHP Planner - Paraguay residency planning for digital nomads and expats",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}

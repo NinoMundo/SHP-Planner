@@ -1,0 +1,77 @@
+{
+  "purposeLabels": {
+    "tax": "Establish tax residency",
+    "move": "Move to Paraguay",
+    "both": "Both tax residency and relocation"
+  },
+  "timelines": {
+    "tax": [
+      {
+        "title": "Pre-arrival document review",
+        "description": "Confirm passport validity and collect civil documents for legalization.",
+        "offsetDays": -30
+      },
+      {
+        "title": "Arrival + entry stamp",
+        "description": "Enter Paraguay and secure entry documentation needed for residency.",
+        "offsetDays": 0
+      },
+      {
+        "title": "Tax residency pathway setup",
+        "description": "Coordinate tax residency requirements and local registration.",
+        "offsetDays": 10
+      }
+    ],
+    "move": [
+      {
+        "title": "Relocation planning",
+        "description": "Plan housing, logistics, and initial residency appointments.",
+        "offsetDays": -21
+      },
+      {
+        "title": "Arrival + settling in",
+        "description": "Arrive in Paraguay and begin in-country steps.",
+        "offsetDays": 0
+      },
+      {
+        "title": "Residency application",
+        "description": "Submit residency paperwork and track status with SHP guidance.",
+        "offsetDays": 7
+      }
+    ],
+    "both": [
+      {
+        "title": "Pre-arrival document review",
+        "description": "Confirm passport validity and collect civil documents for legalization.",
+        "offsetDays": -30
+      },
+      {
+        "title": "Relocation planning",
+        "description": "Plan housing, logistics, and initial residency appointments.",
+        "offsetDays": -14
+      },
+      {
+        "title": "Arrival + entry stamp",
+        "description": "Enter Paraguay and secure entry documentation needed for residency.",
+        "offsetDays": 0
+      },
+      {
+        "title": "Residency & tax setup",
+        "description": "Submit residency paperwork and coordinate tax residency setup.",
+        "offsetDays": 10
+      }
+    ]
+  },
+  "checklist": [
+    "Passport valid for at least 6 months",
+    "Birth certificate (recently issued)",
+    "Police clearance certificate",
+    "Travel itinerary and accommodation plan"
+  ],
+  "documents": [
+    "Certified translations",
+    "Apostille/legalization of civil documents",
+    "Digital copies in PDF",
+    "Passport-size photos"
+  ]
+}

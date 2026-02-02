@@ -1,0 +1,285 @@
+:root {
+  --ink: #151416;
+  --ink-soft: #3a383f;
+  --sand: #f7efe2;
+  --amber: #f3b34f;
+  --cactus: #2e6d5b;
+  --cloud: #fff9f1;
+  --shadow: 0 20px 40px rgba(21, 20, 22, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Space Grotesk", system-ui, sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #fff7ec 0%, #f1e6d3 55%, #e4d3b8 100%);
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 24px 80px;
+  display: grid;
+  gap: 40px;
+}
+
+.hero {
+  display: grid;
+  gap: 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand-mark {
+  font-family: "Fraunces", serif;
+  font-size: 28px;
+  font-weight: 700;
+  background: var(--cactus);
+  color: #fff9f1;
+  padding: 14px 18px;
+  border-radius: 16px;
+  letter-spacing: 0.08em;
+}
+
+.brand-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 12px;
+  margin: 0 0 6px;
+  color: var(--ink-soft);
+}
+
+.hero h1 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(32px, 4vw, 48px);
+  margin: 0;
+}
+
+.hero-subtitle {
+  max-width: 620px;
+  font-size: 18px;
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.meta-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--ink-soft);
+}
+
+.meta-value {
+  display: block;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.card {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  background: var(--cloud);
+  padding: 32px;
+  border-radius: 28px;
+  box-shadow: var(--shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -120px auto auto -140px;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(243, 179, 79, 0.35), transparent 70%);
+  z-index: 0;
+}
+
+.planner,
+.preview {
+  position: relative;
+  z-index: 1;
+}
+
+.planner {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-weight: 600;
+}
+
+input,
+select {
+  border: 1px solid rgba(21, 20, 22, 0.2);
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #fff;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--cactus);
+  box-shadow: 0 0 0 3px rgba(46, 109, 91, 0.15);
+}
+
+.submit {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 18px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: var(--cactus);
+  color: #fff9f1;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(46, 109, 91, 0.25);
+}
+
+.preview {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 22px;
+  display: grid;
+  gap: 18px;
+  border: 1px solid rgba(21, 20, 22, 0.08);
+}
+
+.preview-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.preview h2 {
+  font-family: "Fraunces", serif;
+  margin: 0;
+  font-size: 22px;
+}
+
+.preview-pill {
+  background: rgba(243, 179, 79, 0.25);
+  color: var(--ink);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.preview-body {
+  display: grid;
+  gap: 12px;
+}
+
+.preview-label {
+  display: block;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.preview-value {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.preview-footer {
+  border-top: 1px solid rgba(21, 20, 22, 0.08);
+  padding-top: 12px;
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.roadmap {
+  background: #ffffff;
+  border-radius: 26px;
+  padding: 28px;
+  display: grid;
+  gap: 20px;
+  box-shadow: var(--shadow);
+}
+
+.roadmap-header h2 {
+  font-family: "Fraunces", serif;
+  margin: 0 0 6px;
+  font-size: 26px;
+}
+
+.roadmap-header p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.roadmap-body {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.roadmap-column {
+  background: var(--cloud);
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid rgba(21, 20, 22, 0.08);
+}
+
+.roadmap-column h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.roadmap-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+  color: var(--ink-soft);
+}
+
+@media (max-width: 720px) {
+  .page {
+    padding: 40px 18px 60px;
+  }
+
+  .brand {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .card {
+    padding: 24px;
+  }
+}
