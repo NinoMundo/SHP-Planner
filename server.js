@@ -8,6 +8,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const port = process.env.PORT || 3000;
+const host = process.env.HOST || "127.0.0.1";
 const referencePath = path.join(__dirname, "data", "residency-reference.json");
 const referenceData = JSON.parse(fs.readFileSync(referencePath, "utf-8"));
 
@@ -65,6 +66,6 @@ app.post("/api/plan", (req, res) => {
   res.json(plan);
 });
 
-app.listen(port, () => {
-  console.log(`SHP Planner running on http://localhost:${port}`);
+app.listen(port, host, () => {
+  console.log(`SHP Planner running on http://${host}:${port}`);
 });
