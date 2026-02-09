@@ -3,6 +3,7 @@ const previewMap = {
   citizenship: "Not set",
   currentResidency: "Not set",
   purpose: "Not set",
+  email: "Not set",
   arrival: "Not set",
   departure: "Not set",
 };
@@ -18,6 +19,7 @@ const timelineList = document.getElementById("timelineList");
 const checklistList = document.getElementById("checklistList");
 const documentsList = document.getElementById("documentsList");
 const roadmap = document.getElementById("roadmap");
+const emailStatus = document.getElementById("emailStatus");
 
 function setPreviewValue(key, value) {
   const display = value?.trim() ? value : previewMap[key];
@@ -49,6 +51,7 @@ plannerForm.addEventListener("submit", (event) => {
     citizenship: payload.citizenship,
     currentResidency: payload.currentResidency,
     purpose: purposeLabels[payload.purpose] || payload.purpose,
+    email: payload.email,
     arrival: payload.arrival,
     departure: payload.departure || "Not set",
   };
@@ -57,7 +60,7 @@ plannerForm.addEventListener("submit", (event) => {
     setPreviewValue(key, value);
   });
 
-  fetch("/api/plan", {
+  fetch("/api/submit", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(payload),
@@ -91,9 +94,11 @@ plannerForm.addEventListener("submit", (event) => {
         documentsList.appendChild(item);
       });
 
+      emailStatus.textContent = plan.emailNote || "Plan generated.";
       roadmap.scrollIntoView({ behavior: "smooth", block: "start" });
     })
     .catch(() => {
       timelineList.innerHTML = "<li>We could not build the plan yet.</li>";
+      emailStatus.textContent = "We could not prepare your PDF yet.";
     });
 });

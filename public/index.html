@@ -70,6 +70,16 @@
             </select>
           </div>
           <div class="field">
+            <label for="email">Email for your PDF plan</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="you@email.com"
+              required
+            />
+          </div>
+          <div class="field">
             <label for="arrival">Planned arrival date</label>
             <input id="arrival" name="arrival" type="date" required />
           </div>
@@ -104,6 +114,10 @@
               <span class="preview-value" data-preview="purpose">Not set</span>
             </div>
             <div>
+              <span class="preview-label">Email</span>
+              <span class="preview-value" data-preview="email">Not set</span>
+            </div>
+            <div>
               <span class="preview-label">Arrival</span>
               <span class="preview-value" data-preview="arrival">Not set</span>
             </div>
@@ -125,6 +139,9 @@
         <div class="roadmap-header">
           <h2>Residency roadmap</h2>
           <p>Submit the form to generate your Sweet Home Paraguay plan.</p>
+        </div>
+        <div class="roadmap-status" id="emailStatus">
+          PDF delivery status will appear here after submission.
         </div>
         <div class="roadmap-body">
           <div class="roadmap-column">

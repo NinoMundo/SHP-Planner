@@ -11,6 +11,7 @@ const port = process.env.PORT || 3000;
 const host = process.env.HOST || "127.0.0.1";
 const referencePath = path.join(__dirname, "data", "residency-reference.json");
 const referenceData = JSON.parse(fs.readFileSync(referencePath, "utf-8"));
+const templatePath = process.env.PDF_TEMPLATE_PATH || "";
 
 app.use(express.json({ limit: "200kb" }));
 app.use(express.static(path.join(__dirname, "public")));
@@ -64,6 +65,32 @@ app.post("/api/plan", (req, res) => {
   );
 
   res.json(plan);
+});
+
+app.post("/api/submit", (req, res) => {
+  const { citizenship, currentResidency, purpose, arrival, departure, email } = req.body || {};
+
+  if (!citizenship || !currentResidency || !purpose || !arrival || !email) {
+    res.status(400).json({ error: "Missing required fields." });
+    return;
+  }
+
+  const plan = buildPlan(
+    { citizenship, currentResidency, purpose, arrival, departure },
+    referenceData
+  );
+
+  const templateReady = templatePath && fs.existsSync(templatePath);
+
+  res.json({
+    ...plan,
+    emailStatus: templateReady
+      ? "queued"
+      : "pending_template",
+    emailNote: templateReady
+      ? "PDF generation will run once SES is configured."
+      : "Waiting on PDF template and SES configuration.",
+  });
 });
 
 app.listen(port, host, () => {

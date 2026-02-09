@@ -249,6 +249,14 @@ select:focus {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
+.roadmap-status {
+  background: rgba(46, 109, 91, 0.08);
+  border-radius: 14px;
+  padding: 12px 16px;
+  color: var(--ink-soft);
+  font-size: 14px;
+}
+
 .roadmap-column {
   background: var(--cloud);
   border-radius: 18px;
